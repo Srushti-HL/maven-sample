@@ -1,0 +1,15 @@
+trigger:
+  - master
+
+pool:
+  name: Default
+
+steps:
+  - script: echo Hello, it's my Azure DevOps App
+    displayName: 'Run an echo command'
+
+  - script: mvn clean install
+    displayName: 'Build with Maven'
+
+  - script: java -jar target/maven-example-1.0-SNAPSHOT
+    displayName: 'Run the JAR file of My mavenexample App'
